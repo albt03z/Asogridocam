@@ -1,0 +1,77 @@
+{% load static %}
+<section class="login-section-area">
+    <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+        <div class="container">
+            <div class="card login-card">
+                <div class="row no-gutters">
+                    <div class="col-md-5">
+                        <img src="{% static 'images/heros/img-signup.jpg' %}" alt="Registrarse" class="login-card-img">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <div class="brand-wrapper">
+                                <img src="{% static 'images/brand/brand-bg.png' %}" alt="Logo" class="logo">
+                                ASOGRIDOCAM
+                            </div>
+                            <p class="login-card-description">Crea una cuenta nueva</p>
+
+                            <form method="POST">
+                                {% csrf_token %}
+
+                                {% if form.errors %}
+                                <div class="alert alert-danger">
+                                    {{ form.errors }}
+                                </div>
+                                {% endif %}
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="form-floating mb-3">
+                                          {{ form.username }}
+                                          <label for="{{ form.username.id_for_label }}">Usuario</label>
+                                      </div>
+                
+                                      <div class="form-floating mb-3">
+                                          {{ form.first_name }}
+                                          <label for="{{ form.first_name.id_for_label }}">Nombre</label>
+                                      </div>
+                
+                                      <div class="form-floating mb-3">
+                                          {{ form.password1 }}
+                                          <label for="{{ form.password1.id_for_label }}">Contraseña</label>
+                                      </div>
+                                    </div>
+                
+                                    <div class="col-md-6">
+                                      <div class="form-floating mb-3">
+                                          {{ form.email }}
+                                          <label for="{{ form.email.id_for_label }}">Correo electrónico</label>
+                                      </div>
+                
+                                      <div class="form-floating mb-3">
+                                          {{ form.last_name }}
+                                          <label for="{{ form.last_name.id_for_label }}">Apellido</label>
+                                      </div>
+                
+                                      <div class="form-floating mb-3">
+                                          {{ form.password2 }}
+                                          <label for="{{ form.password2.id_for_label }}">Confirmar contraseña</label>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                <input name="register" id="register" class="btn btn-block login-btn mb-4" type="submit" value="Registrarse">
+                            </form>
+
+                            <p class="login-card-footer-text">¿Ya tienes una cuenta? <a href="{% url 'login' %}" class="text-reset">Inicia sesión aquí</a></p>
+                            <nav class="login-card-footer-nav">
+                                <a href="#!">Términos de uso</a>
+                                <a href="#!">Política de privacidad</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</section>

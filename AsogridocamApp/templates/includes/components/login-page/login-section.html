@@ -1,0 +1,52 @@
+{% load static %}
+<section class="login-section-area">
+  <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container">
+      <div class="card login-card">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            <img src="{% static 'images/heros/img-signup.jpg' %}" alt="Iniciar sesión" class="login-card-img">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <div class="brand-wrapper">
+                <img src="{% static 'images/brand/brand-bg.png' %}" alt="Logo" class="logo">
+                ASOGRIDOCAM
+              </div>
+              <p class="login-card-description">Inicia sesión en tu cuenta</p>
+                      
+              <form method="POST">
+                  {% csrf_token %}
+
+                  {% if form.errors %}
+                  <div class="alert alert-danger">
+                      {{ form.errors }}
+                  </div>
+                  {% endif %}
+
+                  <div class="form-floating">
+                      {{ form.username }}
+                      <label for="{{ form.username.id_for_label }}">Usuario</label>
+                  </div>
+
+                  <div class="form-floating">
+                      {{ form.password }}
+                      <label for="{{ form.password.id_for_label }}">Contraseña</label>
+                  </div>
+
+                  <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Iniciar sesión">
+              </form>
+
+              <a href="#!" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
+              <p class="login-card-footer-text">¿No tienes una cuenta? <a href="{% url 'signup' %}" class="text-reset">Regístrate aquí</a></p>
+              <nav class="login-card-footer-nav">
+                  <a href="#!">Términos de uso</a>
+                  <a href="#!">Política de privacidad</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>

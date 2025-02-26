@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Meta tags-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Title-->
+        <title>Asogridocam: Agricultura que Conecta</title>
+
+        <!--SEO Meta description-->
+        <meta name="description" 
+        content="Asogridocam es una asociación de agricultores del Chocó que promueve la exportación de productos agrícolas de alta calidad al mercado internacional.">
+        <meta name="keywords" content="Asogridocam, agricultura sostenible, exportación, productos agrícolas, Chocó, Colombia">
+        <meta name="author" content="Adalberto González Cuesta">
+
+        <!--Favicon-->
+        <link rel="apple-touch-icon" href="{% static 'images/brand/apple-touch-icon.png' %}" sizes="180x180">
+        <link rel="icon" type="image/png" href="{% static 'images/brand/favicon-32x32.png' %}" sizes="32x32">
+        <link rel="icon" type="image/png" href="{% static 'images/brand/favicon-16x16.png' %}" sizes="16x16">
+        <link rel="manifest" href="{% static 'images/brand/site.webmanifest' %}">
+        <link rel="shortcut icon" href="{% static 'images/brand/favicon.ico' %}">
+
+        <!--Styles CSS-->
+        {% include 'includes/layouts/stylesheets.html' %}
+    </head>
+    <body>
+        <main>
+            <!-- Header -->
+            {% include 'includes/components/menu/menu.html' %}
+            {% block content %}
+            {% endblock %}
+            <!-- Footer -->
+            {% include 'includes/components/footer/footer.html' %}
+        </main>
+        <!--Scripts JS-->
+        {% include 'includes/layouts/scripts.html' %}
+    </body>
+</html>

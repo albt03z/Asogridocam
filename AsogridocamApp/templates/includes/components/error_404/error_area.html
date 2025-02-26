@@ -1,0 +1,20 @@
+{% load static %}
+<div class="error-section-area sp1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 m-auto">
+                <div class="heading2 text-center">
+                    <img src="{% static 'images/heros/error-404.png' %}" alt="Página no encontrada">
+                    <div class="space50"></div>
+                    <h2>¡Lo sentimos! Página no encontrada</h2>
+                    <div class="space16"></div>
+                    <p>La página que buscas no existe o ha sido <br class="d-lg-block d-none"> movida. Aquí tienes algunos enlaces útiles.</p>
+                    <div class="space24"></div>
+                    <div class="btn-area1">
+                        <a href="{% url 'home' %}" class="btn-custom-tertiary">Volver al inicio <span><i class="fa-solid fa-arrow-right"></i></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

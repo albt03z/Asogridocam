@@ -1,0 +1,49 @@
+{% load static %}
+<section class="blog-section-area sp1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 m-auto">
+                <div class="blog-header-area text-center heading-3">
+                    <h5><img src="{% static 'images/brand/brand-bg.png' %}" alt="">Nuestro Blog</h5>
+                    <h2 class="titles-header">Descubre las Últimas Noticias y Tendencias en Agricultura</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 m-auto">
+                <div class="blog-all-section">
+
+                    {% for noticia in news %}
+                    <div class="row align-items-center" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="images1 image-anime">
+                                <img src="{{ noticia.image_url }}" alt="{{ noticia.title }}" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-6">
+                            <div class="content-area">
+                                <div class="main-content">
+                                    <h5>{{ noticia.category }}</h5>
+                                    <a href="{{ noticia.news_url }}" target="_blank">{{ noticia.title }}</a>
+                                    {% if noticia.author %}
+                                    <a href="{{ noticia.news_url }}" class="text">
+                                        <img src="{% static 'images/more/svg/icons-hero-7.svg' %}" alt="" width="24" height="24">
+                                        Por {{ noticia.author }}
+                                    </a>
+                                    {% endif %}
+                                </div>
+                                <div class="arrow">
+                                    <a href="{{ noticia.news_url }}" target="_blank"><i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space40"></div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
