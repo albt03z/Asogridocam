@@ -39,6 +39,14 @@ class LoginView(FormView):
         if request.user.is_authenticated:
             return redirect('home')
         return super().get(request, *args, **kwargs)
+    
+class AboutView(TemplateView):
+    """ Vista de la página de acerca de """
+    template_name = 'about.html'
+
+class ServicesView(TemplateView):
+    """ Vista de la página de servicios """
+    template_name = 'services.html'
 
 def custom_404_view(request, exception):
     return render(request, '404.html', status=404)

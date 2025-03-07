@@ -1829,6 +1829,7 @@ img {
 }
 
 /* Sub Pages */
+/* Sub pages - header */
 .about-header-area-2 {
     background: url('../images/backgrounds/bg.png') no-repeat center center/cover;
     position: relative;
@@ -1864,3 +1865,5 @@ img {
     display: inline-block;
     font-weight: var(--ztc-weight-semibold);
 }
+
+/* Sub pages - about */

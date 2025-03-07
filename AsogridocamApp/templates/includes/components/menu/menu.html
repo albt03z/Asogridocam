@@ -1,7 +1,7 @@
 {% load static %}
 <header>
     <nav class="navbar navbar-expand-lg fixed-top">
-        <a href="" class="navbar-brand">
+        <a href="{% url 'home' %}" class="navbar-brand">
             <img src="{% static 'images/brand/brand-bg.png' %}" alt="Asogridocam-Brand" width="44" height="44">
             ASOGRIDOCAM
         </a>
@@ -23,13 +23,13 @@
             <div class="nav-menu offcanvas-body d-flex flex-column flex-lg-row" id="nav-menu">
                 <ul class="navbar-nav align-items-center fs-5 flex-grow-1">
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="">Inicio</a>
+                        <a class="nav-link" href="{% url 'home' %}">Inicio</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="">Quiénes Somos</a>
+                        <a class="nav-link" href="{% url 'about' %}">Quiénes Somos</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="">Servicios</a>
+                        <a class="nav-link" href="{% url 'services' %}">Servicios</a>
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link" href="">Impacto Social</a>
